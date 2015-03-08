@@ -1,6 +1,4 @@
-var CreTictactoe = CreTictactoe || {};
-
-CreTictactoe.onload = function ()
+$(document).ready(function ()
 {		
 	var theCanvas = document.getElementById('theCanvas');
 	var controller;
@@ -367,4 +365,4 @@ var tttCase = function(x,y)
 		    return false;
 		},
 		false);	
-};
+});
