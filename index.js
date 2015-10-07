@@ -1,12 +1,11 @@
 var server = require('cre-nodejs-server');
 
-var handlers = [];
-
-handlers = server.addDefaultHandlers(  
-  handlers,                     // only defaults
-  '/TicTacToe/Client/html/tictactoe.html' // Start page
-);
-
-server.server.start(
-  require('path').resolve(__dirname), // root 
-  handlers);
+server.start(
+  {
+    rootDirectory: require('path').resolve(__dirname),
+    pageHeader: '/Lib/Client/html/commonHeader.html',
+    routes: [{
+        route: '/',        
+        handler: server.clientFileHandler('/TicTacToe/Client/html/tictactoe.html')
+      }]
+  });
